@@ -1,15 +1,23 @@
 {
-  "name": "@xattaua/icons",
+  "name": "@xatta/icons",
   "version": "0.0.0-development",
   "description": "Set of SVG React icon components as library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --max-warnings 0 --ext .ts,.tsx,.js,.jsx ."
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -g .config/commitlint.config.js --edit $1"
+      "commit-msg": "commitlint -g .config/commitlint.config.js --edit $1",
+      "pre-commit": "FORCE_COLOR=1 lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "npm run lint",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,8 +30,29 @@
     "url": "https://github.com/xattaua/icons/issues"
   },
   "homepage": "https://github.com/xattaua/icons#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-storybook": "^0.5.12",
+    "prettier": "^2.2.1",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.0",
     "husky": "^4.3.8",
+    "lint-staged": "^8.0.4",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^17.6.7"
   }
