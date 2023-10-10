@@ -1,0 +1,24 @@
+{
+  "name": "@xattaua/icons",
+  "version": "1.0.0",
+  "description": "Set of SVG React icon components as library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xattaua/icons.git"
+  },
+  "keywords": [],
+  "author": "devs@xatta.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xattaua/icons/issues"
+  },
+  "homepage": "https://github.com/xattaua/icons#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^17.6.7"
+  }
+}
