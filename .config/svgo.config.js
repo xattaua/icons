@@ -1,7 +1,6 @@
 module.exports = {
   removeDimensions: false,
   plugins: [
-    'preset-default',
     'prefixIds',
     {
       name: 'sortAttrs',
