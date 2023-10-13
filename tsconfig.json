@@ -24,11 +24,12 @@
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*"],
+  "include": ["./"],
   "exclude": [
     "lib",
     "dist",
     "build",
-    "node_modules"
+    "node_modules",
+    "./stories"
   ]
 }
