@@ -13,7 +13,7 @@
     "svgr": "svgr --typescript --title-prop -d ./components -- ./svg",
     "lint": "eslint --fix --max-warnings 0 --ext .ts,.tsx,.js,.jsx .",
     "storybook": "npm run clean && npm run prepare:icons && npm run build:stories && storybook dev -p 6006",
-    "build-storybook": "npm run clean && npm run prebuild:icons && npm run build:stories && storybook build -o ./storybook-static",
+    "build-storybook": "npm run clean && npm run prepare:icons && npm run build:stories && storybook build -o ./storybook-static",
     "build:stories": "ts-node scripts/index.ts"
   },
   "husky": {

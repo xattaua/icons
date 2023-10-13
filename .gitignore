@@ -2,6 +2,7 @@
 .vscode
 .DS_Store
 components
+storybook-static
 
 # Logs
 logs
