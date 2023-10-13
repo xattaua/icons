@@ -8,9 +8,13 @@
   "license": "ISC",
   "scripts": {
     "prepare:icons": "npm run svgo && npm run svgr",
+    "clean": "rimraf ./components && rimraf ./dist",
     "svgo": "svgo --config .config/svgo.config.js -f ./svg -o ./svg",
     "svgr": "svgr --typescript --title-prop -d ./components -- ./svg",
-    "lint": "eslint --fix --max-warnings 0 --ext .ts,.tsx,.js,.jsx ."
+    "lint": "eslint --fix --max-warnings 0 --ext .ts,.tsx,.js,.jsx .",
+    "storybook": "npm run clean && npm run prepare:icons && npm run build:stories && storybook dev -p 6006",
+    "build-storybook": "npm run clean && npm run prebuild:icons && npm run build:stories && storybook build -o ./storybook-static",
+    "build:stories": "ts-node scripts/index.ts"
   },
   "husky": {
     "hooks": {
@@ -37,6 +41,20 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/react": "^7.4.6",
+    "@storybook/react-webpack5": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
+    "@svgr/cli": "^6.2.1",
     "@types/react": "^18.0.28",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
@@ -49,15 +67,14 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.12",
+    "husky": "^4.3.8",
+    "lint-staged": "^8.0.4",
     "prettier": "^2.2.1",
+    "storybook": "^7.4.6",
+    "svgo": "^2.8.0",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.5.0",
-    "husky": "^4.3.8",
-    "svgo": "^2.8.0",
-    "lint-staged": "^8.0.4",
-    "@svgr/cli": "^6.2.1",
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^17.6.7"
+    "rimraf": "^3.0.2"
   }
 }
